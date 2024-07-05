@@ -45,12 +45,32 @@ class _CryptoListScreenState extends State<CryptoListScreen> {
             return Center(child: Text('No data available'));
           } else {
             return ListView.builder(
+              padding: EdgeInsets.all(10.0),
               itemCount: snapshot.data!.length,
               itemBuilder: (context, index) {
                 Crypto crypto = snapshot.data![index];
-                return ListTile(
-                  title: Text(crypto.name),
-                  subtitle: Text('\$${crypto.price.toStringAsFixed(2)}'),
+                return Card(
+                  elevation: 5,
+                  margin: EdgeInsets.symmetric(vertical: 8.0),
+                  child: ListTile(
+                    leading: Icon(
+                      Icons.monetization_on,
+                      color: Colors.blue,
+                      size: 40,
+                    ),
+                    title: Text(
+                      crypto.name,
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    subtitle: Text(
+                      '\$${crypto.price.toStringAsFixed(2)}',
+                      style: TextStyle(
+                        color: Colors.green,
+                      ),
+                    ),
+                  ),
                 );
               },
             );

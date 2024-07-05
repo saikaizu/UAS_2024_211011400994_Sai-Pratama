@@ -12,6 +12,13 @@ class MyApp extends StatelessWidget {
       title: 'Crypto Prices',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        scaffoldBackgroundColor: Colors.grey[200],
+        textTheme: TextTheme(
+          headline6: TextStyle(color: Colors.white, fontSize: 20),
+        ),
+        appBarTheme: AppBarTheme(
+          color: Colors.blue,
+        ),
       ),
       home: CryptoListScreen(),
     );
